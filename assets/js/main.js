@@ -244,3 +244,42 @@
   });
 
 })(jQuery);
+
+// Languages
+function getLanguage() {
+  let language;
+  (localStorage.getItem('language') == null) ? setLanguage('en') : false;
+  $.ajax({ 
+  url:  '/assets/languages/' +  localStorage.getItem('language') + '.json', 
+  dataType: 'json', async: false, dataType: 'json', 
+  success: function (lang) { language = lang } });
+  return language;
+}
+
+function setLanguage(lang) {
+  setInactiveFlag(localStorage.getItem('language'));
+  localStorage.setItem('language', lang);
+  setActiveFlag(localStorage.getItem('language'));
+  translate();  
+}
+
+function setActiveFlag(lang){
+  document.getElementById("languageFlag" + lang.toUpperCase()).classList.add("active-language-flag");
+}
+
+function setInactiveFlag(lang){
+  document.getElementById("languageFlag" + localStorage.getItem('language').toUpperCase()).classList.remove("active-language-flag");
+}
+
+function translate(){
+  const language = getLanguage();
+  $('#navMenuHome').text(language.home);
+  $('#navMenuAboutUs').text(language.aboutUs);
+  $('#navMenuServices').text(language.services);
+  $('#navMenuContactUs').text(language.contactUs);
+}
+
+$(document).ready(function(){
+  translate();
+  setActiveFlag(localStorage.getItem('language'));
+});
