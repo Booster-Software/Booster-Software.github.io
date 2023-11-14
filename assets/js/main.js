@@ -264,11 +264,13 @@ function setLanguage(lang) {
 }
 
 function setActiveFlag(lang){
+  (lang == null) ? lang='en' : false;
   document.getElementById("languageFlag" + lang.toUpperCase()).classList.add("active-language-flag");
 }
 
 function setInactiveFlag(lang){
-  document.getElementById("languageFlag" + localStorage.getItem('language').toUpperCase()).classList.remove("active-language-flag");
+  (lang == null) ? lang='en' : false;
+  document.getElementById("languageFlag" + lang.toUpperCase()).classList.remove("active-language-flag");
 }
 
 function translate(){
@@ -277,6 +279,59 @@ function translate(){
   $('#navMenuAboutUs').text(language.aboutUs);
   $('#navMenuServices').text(language.services);
   $('#navMenuContactUs').text(language.contactUs);
+  $('#homeHeader1Text1').text(language.homeHeader1Text1);
+  $('#homeHeader1Text2').text(language.homeHeader1Text2);
+  $('#homeButton1').text(language.homeButton1);
+  $('#homeHeader2Text1').text(language.homeHeader2Text1);
+  $('#homeHeader2Text2').text(language.homeHeader2Text2);
+  $('#homeButton2').text(language.homeButton2);
+  $('#homeCarouselPrevious').text(language.homeCarouselPrevious);
+  $('#homeCarouselNext').text(language.homeCarouselNext);
+  $('#featuredServicesTitle1').text(language.featuredServicesTitle1);
+  $('#featuredServicesDescription1').text(language.featuredServicesDescription1);
+  $('#featuredServicesTitle2').text(language.featuredServicesTitle2);
+  $('#featuredServicesDescription2').text(language.featuredServicesDescription2);
+  $('#featuredServicesTitle3').text(language.featuredServicesTitle3);
+  $('#featuredServicesDescription3').text(language.featuredServicesDescription3);
+  $('#aboutUsDescription').text(language.aboutUsDescription);
+  $('#aboutUsTitle').text(language.aboutUs);
+  $('#aboutUsTitle1').text(language.aboutUsTitle1);
+  $('#aboutUsDescription1').text(language.aboutUsDescription1);
+  $('#aboutUsTitle2').text(language.aboutUsTitle2);
+  $('#aboutUsDescription2').text(language.aboutUsDescription2);
+  $('#aboutUsTitle3').text(language.aboutUsTitle3);
+  $('#aboutUsDescription3').text(language.aboutUsDescription3);
+  $('#servicesTitle').text(language.services);
+  $('#servicesDescription').text(language.servicesDescription);
+  $('#servicesTitle1').text(language.servicesTitle1);
+  $('#servicesDescription1').text(language.servicesDescription1);
+  $('#servicesTitle2').text(language.servicesTitle2);
+  $('#servicesDescription2').text(language.servicesDescription2);
+  $('#servicesTitle3').text(language.servicesTitle3);
+  $('#servicesDescription3').text(language.servicesDescription3);
+  $('#servicesTitle4').text(language.servicesTitle4);
+  $('#servicesDescription4').text(language.servicesDescription4);
+  $('#servicesTitle5').text(language.servicesTitle5);
+  $('#servicesDescription5').text(language.servicesDescription5);
+  $('#letsWorkTogetherTitle').text(language.letsWorkTogetherTitle);
+  $('#letsWorkTogetherDescription').text(language.letsWorkTogetherDescription);
+  $('#letsWorkTogetherCTA').text(language.contactUs);
+  $('#ourClients').text(language.ourClients);
+  $('#teamDescription').text(language.teamDescription);
+  $('#contactUsTitle').text(language.contactUs);
+  $('#contactUsDescription').text(language.contactUsDescription);
+  $('#address').text(language.address);
+  $('#phoneNumber').text(language.phoneNumber);
+  $('#email').text(language.email);
+  $('#footerLogoDescription').text(language.footerLogoDescription);
+  $('#footerUsefulLinks').text(language.footerUsefulLinks);
+  $('#footerHome').text(language.home);
+  $('#footerAboutUs').text(language.aboutUs);
+  $('#footerServices').text(language.services);
+  $('#footerContactUs').text(language.contactUs);
+  $('#footerPhone').text(language.footerPhone);
+  $('#footerEmail').text(language.footerEmail);
+  $('#copyright').text(language.copyright);
 }
 
 $(document).ready(function(){
