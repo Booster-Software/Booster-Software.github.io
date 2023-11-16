@@ -1,6 +1,6 @@
-{ 
+{
     "currentLanguage": "ES",
-    "home": "Inicio", 
+    "home": "Inicio",
     "aboutUs": "Nosotros",
     "services": "Servicios",
     "contactUs": "Contacto",
@@ -8,7 +8,7 @@
     "homeHeader1Text2": "Servicios de Staff Augmentation para fortalecer sus equipos de desarrollo de software.",
     "homeButton1": "Empezar",
     "homeHeader2Text1": "Somos profesionales",
-    "homeHeader2Text2": "Nos destacamos por brindarle los mejores desarrolladores de software, diseñadores de UI/UX, gerentes e ingenieros de control de calidad. Estos son algunos de los roles a los que podrá acceder contratando nuestros servicios de Staff Augmentation. Los principales beneficios incluyen menores costos, mejora de la velocidad y la eficiencia.",
+    "homeHeader2Text2": "Nos destacamos por brindar los mejores desarrolladores de software, diseñadores de UI/UX, gerentes e ingenieros de control de calidad. Estos son algunos de los roles a los que podrá acceder contratando nuestros servicios de Staff Augmentation. Los principales beneficios incluyen menores costos, mejora de la velocidad y la eficiencia.",
     "homeButton2": "Empezar",
     "homeCarouselPrevious": "Anterior",
     "homeCarouselNext": "Siguiente",
