@@ -844,6 +844,10 @@ section {
   background: #18d26e;
 }
 
+.grecaptcha-badge{
+  display: inline-block;
+}
+
 /* Call To Action Section
 --------------------------------*/
 #call-to-action {

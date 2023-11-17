@@ -302,9 +302,9 @@ function submitCV() {
   const name = $("#careersCVname").val();
   const email = $("#careersCVemail").val();
   const files = $("#careersCVfile").prop("files");
-  const captcha = grecaptcha.getResponse();
 
-  if (name && email) {
+  if (name && email && files.length > 0) {
+    const captcha = grecaptcha.getResponse();
     resetSubmitResultMessage();
     $("#careersSubmitSpinner").show();
     sendCV(name, email, files, captcha);
@@ -332,17 +332,26 @@ async function sendCV(name, email, files, captcha) {
 async function showSubmitResult(result) {
   $("#careersSubmitSpinner").hide();
   const language = getLanguage();
-  resetSubmitResultMessage();
   if (result == 200) {
     $("#careersSubmitCollapseAlert").addClass("alert-success");
-    $("#careersSubmitCollapseAlertHeader").html(language.careersSubmitCollapseAlertHeaderOk);
-    $("#careersSubmitCollapseAlertMainMessage").html(language.careersSubmitCollapseAlertMainMessageOk);
+    $("#careersSubmitCollapseAlertHeader").html(
+      language.careersSubmitCollapseAlertHeaderOk
+    );
+    $("#careersSubmitCollapseAlertMainMessage").html(
+      language.careersSubmitCollapseAlertMainMessageOk
+    );
   } else {
     $("#careersSubmitCollapseAlert").addClass("alert-danger");
-    $("#careersSubmitCollapseAlertHeader").html(language.careersSubmitCollapseAlertHeaderOk);
-    $("#careersSubmitCollapseAlertMainMessage").html(language.careersSubmitCollapseAlertMainMessageError);
+    $("#careersSubmitCollapseAlertHeader").html(
+      language.careersSubmitCollapseAlertHeaderError
+    );
+    $("#careersSubmitCollapseAlertMainMessage").html(
+      language.careersSubmitCollapseAlertMainMessageError
+    );
   }
-  $("#careersSubmitCollapseAlertFooterMessage").html(language.careersSubmitCollapseAlertFooterMessage);
+  $("#careersSubmitCollapseAlertFooterMessage").html(
+    language.careersSubmitCollapseAlertFooterMessage
+  );
   $("#careersSubmitCollapse").collapse("show");
 }
 
@@ -445,8 +454,8 @@ function translate() {
   $("#servicesDescription5").html(language.servicesDescription5);
   $("#careersTitle").html(language.careers);
   $("#careersDescription").html(language.careersDescription);
-  $("#cereersCVnameLabel").html(language.cereersCVnameLabel);
-  $("#cereersCVemailLabel").html(language.cereersCVemailLabel);
+  $("#careersCVnameLabel").html(language.cereersCVnameLabel);
+  $("#careersCVemailLabel").html(language.cereersCVemailLabel);
   $("#careersCVfileLabel").html(language.careersCVfileLabel);
   $("#careersSubmitLabel").html(language.careersSubmitLabel);
   $("#letsWorkTogetherTitle").html(language.letsWorkTogetherTitle);
