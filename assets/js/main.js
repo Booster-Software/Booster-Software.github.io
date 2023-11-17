@@ -299,12 +299,12 @@ function onSubmit(token) {
 }
 
 function submitCV() {
-  const name = $("#careersCVname").val();
-  const email = $("#careersCVemail").val();
-  const files = $("#careersCVfile").prop("files");
+  var name = $("#careersCVname").val();
+  var email = $("#careersCVemail").val();
+  var files = $("#careersCVfile").prop("files");
 
   if (name && email && files.length > 0) {
-    const captcha = grecaptcha.getResponse();
+    var captcha = grecaptcha.getResponse();
     resetSubmitResultMessage();
     $("#careersSubmitSpinner").show();
     sendCV(name, email, files, captcha);
@@ -312,15 +312,15 @@ function submitCV() {
 }
 
 async function sendCV(name, email, files, captcha) {
-  const form = new FormData();
+  var form = new FormData();
   form.append("name", name);
   form.append("email", email);
-  const blob = new Blob(files, { type: files[0].type });
-  const file = new File([blob], files[0].name);
+  var blob = new Blob(files, { type: files[0].type });
+  var file = new File([blob], files[0].name);
   form.append("file", file);
   form.append("captcha", captcha);
 
-  const response = await fetch("https://booster.software/file-upload", {
+  var response = await fetch("https://booster.software/file-upload", {
     method: "POST",
     body: form,
   });
@@ -331,7 +331,7 @@ async function sendCV(name, email, files, captcha) {
 
 async function showSubmitResult(result) {
   $("#careersSubmitSpinner").hide();
-  const language = getLanguage();
+  var language = getLanguage();
   if (result == 200) {
     $("#careersSubmitCollapseAlert").addClass("alert-success");
     $("#careersSubmitCollapseAlertHeader").html(
@@ -406,7 +406,7 @@ function setInactiveFlag(lang) {
 }
 
 function translate() {
-  const language = getLanguage();
+  var language = getLanguage();
   $("#navMenuHome").html(language.home);
   $("#navMenuAboutUs").html(language.aboutUs);
   $("#navMenuServices").html(language.services);
