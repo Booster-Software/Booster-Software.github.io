@@ -293,6 +293,44 @@
   });
 })(jQuery);
 
+// Send CV
+$("#careersForm").submit(function (e) {
+  $("#careersSubmitSpinner").show();
+  sendCV(
+    $("#cereersCVname").val(),
+    $("#cereersCVemail").val(),
+    $("#careersCVfile").prop("files")
+  );
+  return false;
+});
+
+async function sendCV(name, email, files) {
+  const form = new FormData();
+  form.append("name", name);
+  form.append("email", email);
+
+  const blob = new Blob(files, { type: files[0].type });
+  const file = new File([blob], files[0].name);
+  form.append("file", file);
+
+  const response = await fetch("https://booster.software/file-upload", {
+    method: "POST",
+    body: form,
+  });
+
+  showSubmitResult(response);
+  return response;
+}
+
+async function showSubmitResult(result) {
+  $("#careersSubmitSpinner").hide();
+  console.log("Result:", result);
+}
+
+$(document).ready(function () {
+  $("#careersSubmitSpinner").hide();
+});
+
 // Languages
 function getLanguage() {
   let language;
