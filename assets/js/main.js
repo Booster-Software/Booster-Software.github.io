@@ -294,37 +294,65 @@
 })(jQuery);
 
 // Send CV
-$("#careersForm").submit(function (e) {
-  $("#careersSubmitSpinner").show();
-  sendCV(
-    $("#cereersCVname").val(),
-    $("#cereersCVemail").val(),
-    $("#careersCVfile").prop("files")
-  );
-  return false;
-});
+function onSubmit(token) {
+  submitCV();
+}
 
-async function sendCV(name, email, files) {
+function submitCV() {
+  const name = $("#careersCVname").val();
+  const email = $("#careersCVemail").val();
+  const files = $("#careersCVfile").prop("files");
+  const captcha = grecaptcha.getResponse();
+
+  if (name && email) {
+    resetSubmitResultMessage();
+    $("#careersSubmitSpinner").show();
+    sendCV(name, email, files, captcha);
+  }
+}
+
+async function sendCV(name, email, files, captcha) {
   const form = new FormData();
   form.append("name", name);
   form.append("email", email);
-
   const blob = new Blob(files, { type: files[0].type });
   const file = new File([blob], files[0].name);
   form.append("file", file);
+  form.append("captcha", captcha);
 
   const response = await fetch("https://booster.software/file-upload", {
     method: "POST",
     body: form,
   });
 
-  showSubmitResult(response);
+  showSubmitResult(response.status);
   return response;
 }
 
 async function showSubmitResult(result) {
   $("#careersSubmitSpinner").hide();
-  console.log("Result:", result);
+  const language = getLanguage();
+  resetSubmitResultMessage();
+  if (result == 200) {
+    $("#careersSubmitCollapseAlert").addClass("alert-success");
+    $("#careersSubmitCollapseAlertHeader").html(language.careersSubmitCollapseAlertHeaderOk);
+    $("#careersSubmitCollapseAlertMainMessage").html(language.careersSubmitCollapseAlertMainMessageOk);
+  } else {
+    $("#careersSubmitCollapseAlert").addClass("alert-danger");
+    $("#careersSubmitCollapseAlertHeader").html(language.careersSubmitCollapseAlertHeaderOk);
+    $("#careersSubmitCollapseAlertMainMessage").html(language.careersSubmitCollapseAlertMainMessageError);
+  }
+  $("#careersSubmitCollapseAlertFooterMessage").html(language.careersSubmitCollapseAlertFooterMessage);
+  $("#careersSubmitCollapse").collapse("show");
+}
+
+function resetSubmitResultMessage() {
+  $("#careersSubmitCollapse").collapse("hide");
+  $("#careersSubmitCollapseAlertHeader").html("");
+  $("#careersSubmitCollapseAlertMainMessage").html("");
+  $("#careersSubmitCollapseAlertFooterMessage").html("");
+  $("#careersSubmitCollapseAlert").removeClass();
+  $("#careersSubmitCollapseAlert").addClass("alert");
 }
 
 $(document).ready(function () {
@@ -373,6 +401,7 @@ function translate() {
   $("#navMenuHome").html(language.home);
   $("#navMenuAboutUs").html(language.aboutUs);
   $("#navMenuServices").html(language.services);
+  $("#navMenuCareers").html(language.careers);
   $("#navMenuContactUs").html(language.contactUs);
   $("#homeHeader1Text1").html(language.homeHeader1Text1);
   $("#homeHeader1Text2").html(language.homeHeader1Text2);
@@ -414,6 +443,12 @@ function translate() {
   $("#servicesDescription4").html(language.servicesDescription4);
   $("#servicesTitle5").html(language.servicesTitle5);
   $("#servicesDescription5").html(language.servicesDescription5);
+  $("#careersTitle").html(language.careers);
+  $("#careersDescription").html(language.careersDescription);
+  $("#cereersCVnameLabel").html(language.cereersCVnameLabel);
+  $("#cereersCVemailLabel").html(language.cereersCVemailLabel);
+  $("#careersCVfileLabel").html(language.careersCVfileLabel);
+  $("#careersSubmitLabel").html(language.careersSubmitLabel);
   $("#letsWorkTogetherTitle").html(language.letsWorkTogetherTitle);
   $("#letsWorkTogetherDescription").html(language.letsWorkTogetherDescription);
   $("#letsWorkTogetherCTA").html(language.contactUs);

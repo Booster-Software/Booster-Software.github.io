@@ -263,30 +263,34 @@
         <section id="careers">
             <div class="container text-center" data-aos="zoom-in">
                 <header class="section-header wow fadeInUp">
-                    <h3>Careers</h3>
-                    <p>Join the team! Send us your CV.</p>
+                    <h3 id="careersTitle">Careers</h3>
+                    <p id="careersDescription">Join the team! Send us your CV.</p>
                 </header>
                 <div class="container text-center">
                     <form>
                         <div class="form-group">
-                            <label for="cereersCVname">Full name</label>
+                            <label for="cereersCVname" id="cereersCVnameLabel">Full name</label>
                             <input type="text" class="form-control" id="cereersCVname" placeholder="George Stephenson">
                         </div>
                         <div class="form-group">
-                            <label for="cereersCVemail">Email address</label>
+                            <label for="cereersCVemail" id="cereersCVemailLabel">Email address</label>
                             <input type="email" class="form-control" id="cereersCVemail" placeholder="george@daylightkit.com">
                         </div>
                         <div class="form-group">
-                            <label for="careersCVfile">Your CV in PDF format</label>
+                            <label for="careersCVfile" id="careersCVfileLabel">Your CV in PDF format</label>
                             <input type="file" accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document" class="form-control-file" id="careersCVfile">
                             </div>
-                        <button type="submit" class="btn btn-primary" data-bs-target="#collapseExample" id="careersSubmit">
-                            <span role="status" id="careersSubmitLabel">Submit</span>
-                            <span class="spinner-border spinner-border-sm" id="careersSubmitSpinner"></span>
-                        </button>
-                        <div class="collapse" id="careersSubmitCollapse">
-                            <div class="card card-body" id="careersSubmitCollapseCard">
-                                Response message.
+                            <button type="submit" class="btn btn-primary g-recaptcha" data-bs-target="#collapseExample"  data-sitekey="6LdrsBEpAAAAAFnpt0pnmbUHXOk8tYBW_jbGhe5j" data-callback="onSubmit" data-action="careersApply" id="careersSubmit">
+                                <span role="status" id="careersSubmitLabel">Submit</span>
+                                <span class="spinner-border spinner-border-sm" id="careersSubmitSpinner"></span>
+                            </button>    
+                            <div class="collapse" id="careersSubmitCollapse">
+                                <div class="alert" id="careersSubmitCollapseAlert" role="alert">
+                                    <h4 class="alert-heading" id="careersSubmitCollapseAlertHeader">Response header</h4>
+                                    <p id="careersSubmitCollapseAlertMainMessage">Response message.</p>
+                                    <hr>
+                                    <p class="mb-0" id="careersSubmitCollapseAlertFooterMessage">Response footer.</p>
+                                </div>
                             </div>
                         </div>
                     </form>                                       
@@ -791,6 +795,8 @@
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     <!-- Uncomment below i you want to use a preloader -->
     <!-- <div id="preloader"></div> -->
+    <!-- Google reCAPTCHA script -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <!-- Vendor JS Files -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
