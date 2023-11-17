@@ -454,8 +454,8 @@ function translate() {
   $("#servicesDescription5").html(language.servicesDescription5);
   $("#careersTitle").html(language.careers);
   $("#careersDescription").html(language.careersDescription);
-  $("#careersCVnameLabel").html(language.cereersCVnameLabel);
-  $("#careersCVemailLabel").html(language.cereersCVemailLabel);
+  $("#careersCVnameLabel").html(language.careersCVnameLabel);
+  $("#careersCVemailLabel").html(language.careersCVemailLabel);
   $("#careersCVfileLabel").html(language.careersCVfileLabel);
   $("#careersSubmitLabel").html(language.careersSubmitLabel);
   $("#letsWorkTogetherTitle").html(language.letsWorkTogetherTitle);
