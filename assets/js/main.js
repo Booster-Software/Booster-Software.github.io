@@ -320,7 +320,7 @@ function sendCV(name, email, files, captcha) {
   form.append("file", file);
   form.append("captcha", captcha);
 
-  fetch("https://booster.software/file-upload", {
+  fetch("/file-upload", {
     method: "POST",
     body: form,
   })
