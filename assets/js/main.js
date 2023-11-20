@@ -303,11 +303,23 @@ function submitCV() {
   var email = $("#careersCVemail").val();
   var files = $("#careersCVfile").prop("files");
 
-  if (name && email && files.length > 0) {
+  if (checkSubmitCVrequiredFields()) {
     var captcha = grecaptcha.getResponse();
     resetSubmitResultMessage();
     $("#careersSubmitSpinner").show();
     sendCV(name, email, files, captcha);
+  }
+}
+
+function checkSubmitCVrequiredFields() {
+  var name = $("#careersCVname").val();
+  var email = $("#careersCVemail").val();
+  var files = $("#careersCVfile").prop("files");
+
+  if (name && email && files.length > 0) {
+    return true;
+  } else {
+    return false;
   }
 }
 
@@ -345,6 +357,9 @@ function showSubmitResult(result) {
     $("#careersSubmitCollapseAlertMainMessage").html(
       language.careersSubmitCollapseAlertMainMessageOk
     );
+    $("#careersSubmitCollapseAlertFooterMessage").html(
+      language.careersSubmitCollapseAlertFooterMessageOk
+    );
   } else {
     $("#careersSubmitCollapseAlert").addClass("alert-danger");
     $("#careersSubmitCollapseAlertHeader").html(
@@ -353,10 +368,10 @@ function showSubmitResult(result) {
     $("#careersSubmitCollapseAlertMainMessage").html(
       language.careersSubmitCollapseAlertMainMessageError
     );
+    $("#careersSubmitCollapseAlertFooterMessage").html(
+      language.careersSubmitCollapseAlertFooterMessageError
+    );
   }
-  $("#careersSubmitCollapseAlertFooterMessage").html(
-    language.careersSubmitCollapseAlertFooterMessage
-  );
   $("#careersSubmitCollapse").collapse("show");
 }
 
@@ -375,25 +390,46 @@ $(document).ready(function () {
 
 // Languages
 function getLanguage() {
-  let language;
+  var language;
   localStorage.getItem("language") == null ? setLanguage("en") : false;
-  $.ajax({
-    url: "/assets/languages/" + localStorage.getItem("language") + ".json",
-    dataType: "json",
-    async: false,
-    dataType: "json",
-    success: function (lang) {
-      language = lang;
-    },
-  });
+  language = getTranslation(localStorage.getItem("language"));
   return language;
 }
 
 function setLanguage(lang) {
+  setPreviousLanguage();
   setInactiveFlag(localStorage.getItem("language"));
   localStorage.setItem("language", lang);
   setActiveFlag(localStorage.getItem("language"));
   translate();
+}
+
+function getPreviousLanguage() {
+  return localStorage.getItem("previousLanguage");
+}
+
+function setPreviousLanguage() {
+  localStorage.getItem("language") == null
+    ? localStorage.setItem("language", "en")
+    : false;
+  localStorage.getItem("previousLanguage") == null
+    ? localStorage.setItem("previousLanguage", "en")
+    : false;
+  localStorage.setItem("previousLanguage", localStorage.getItem("language"));
+}
+
+function getTranslation(lang) {
+  var translation;
+  $.ajax({
+    url: "/assets/languages/" + lang + ".json",
+    dataType: "json",
+    async: false,
+    dataType: "json",
+    success: function (lang) {
+      translation = lang;
+    },
+  });
+  return translation;
 }
 
 function setActiveFlag(lang) {
@@ -412,6 +448,7 @@ function setInactiveFlag(lang) {
 
 function translate() {
   var language = getLanguage();
+  // Main page
   $("#navMenuHome").html(language.home);
   $("#navMenuAboutUs").html(language.aboutUs);
   $("#navMenuServices").html(language.services);
@@ -457,12 +494,6 @@ function translate() {
   $("#servicesDescription4").html(language.servicesDescription4);
   $("#servicesTitle5").html(language.servicesTitle5);
   $("#servicesDescription5").html(language.servicesDescription5);
-  $("#careersTitle").html(language.careers);
-  $("#careersDescription").html(language.careersDescription);
-  $("#careersCVnameLabel").html(language.careersCVnameLabel);
-  $("#careersCVemailLabel").html(language.careersCVemailLabel);
-  $("#careersCVfileLabel").html(language.careersCVfileLabel);
-  $("#careersSubmitLabel").html(language.careersSubmitLabel);
   $("#letsWorkTogetherTitle").html(language.letsWorkTogetherTitle);
   $("#letsWorkTogetherDescription").html(language.letsWorkTogetherDescription);
   $("#letsWorkTogetherCTA").html(language.contactUs);
@@ -483,6 +514,71 @@ function translate() {
   $("#footerPhone").html(language.footerPhone);
   $("#footerEmail").html(language.footerEmail);
   $("#copyright").html(language.copyright);
+  // Careers
+  $("#careersTitle").html(language.careers);
+  $("#careersDescription").html(language.careersDescription);
+  $("#careersCVnameLabel").html(language.careersCVnameLabel);
+  $("#careersCVemailLabel").html(language.careersCVemailLabel);
+  $("#careersCVfileLabel").html(language.careersCVfileLabel);
+  $("#careersSubmitLabel").html(language.careersSubmitLabel);
+  translateDynamicElements(language);
+}
+
+function translateDynamicElements(newLanguage) {
+  var oldLanguage = getTranslation(getPreviousLanguage());
+  if (
+    extractTextFromHTML($("#careersSubmitCollapseAlertHeader").html()) ==
+    extractTextFromHTML(oldLanguage.careersSubmitCollapseAlertHeaderOk)
+  ) {
+    $("#careersSubmitCollapseAlertHeader").html(
+      newLanguage.careersSubmitCollapseAlertHeaderOk
+    );
+  }
+  if (
+    extractTextFromHTML($("#careersSubmitCollapseAlertHeader").html()) ==
+    extractTextFromHTML(oldLanguage.careersSubmitCollapseAlertHeaderError)
+  ) {
+    $("#careersSubmitCollapseAlertHeader").html(
+      newLanguage.careersSubmitCollapseAlertHeaderError
+    );
+  }
+  if (
+    extractTextFromHTML($("#careersSubmitCollapseAlertMainMessage").html()) ==
+    extractTextFromHTML(oldLanguage.careersSubmitCollapseAlertMainMessageOk)
+  ) {
+    $("#careersSubmitCollapseAlertMainMessage").html(
+      newLanguage.careersSubmitCollapseAlertMainMessageOk
+    );
+  }
+  if (
+    extractTextFromHTML($("#careersSubmitCollapseAlertMainMessage").html()) ==
+    extractTextFromHTML(oldLanguage.careersSubmitCollapseAlertMainMessageError)
+  ) {
+    $("#careersSubmitCollapseAlertMainMessage").html(
+      newLanguage.careersSubmitCollapseAlertMainMessageError
+    );
+  }
+  if (
+    extractTextFromHTML($("#careersSubmitCollapseAlertFooterMessage").html()) ==
+    extractTextFromHTML(oldLanguage.careersSubmitCollapseAlertFooterMessageOk)
+  ) {
+    $("#careersSubmitCollapseAlertFooterMessage").html(
+      newLanguage.careersSubmitCollapseAlertFooterMessageOk
+    );
+  }
+  if (
+    extractTextFromHTML($("#careersSubmitCollapseAlertFooterMessage").html()) ==
+    extractTextFromHTML(oldLanguage.careersSubmitCollapseAlertFooterMessageError)
+  ) {
+    $("#careersSubmitCollapseAlertFooterMessage").html(
+      newLanguage.careersSubmitCollapseAlertFooterMessageError
+    );
+  }
+}
+
+function extractTextFromHTML(html) {
+  return new DOMParser().parseFromString(html, "text/html").documentElement
+    .textContent;
 }
 
 $(document).ready(function () {
