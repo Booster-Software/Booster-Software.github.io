@@ -311,7 +311,7 @@ function submitCV() {
   }
 }
 
-async function sendCV(name, email, files, captcha) {
+function sendCV(name, email, files, captcha) {
   var form = new FormData();
   form.append("name", name);
   form.append("email", email);
@@ -320,16 +320,21 @@ async function sendCV(name, email, files, captcha) {
   form.append("file", file);
   form.append("captcha", captcha);
 
-  var response = await fetch("https://booster.software/file-upload", {
+  fetch("https://booster.software/file-upload", {
     method: "POST",
     body: form,
-  });
+  })
+    .then((response) => {
+      showSubmitResult(response.status);
+    })
+    .catch((error) => {
+      showSubmitResult(400);
+    });
 
-  showSubmitResult(response.status);
   return response;
 }
 
-async function showSubmitResult(result) {
+function showSubmitResult(result) {
   $("#careersSubmitSpinner").hide();
   var language = getLanguage();
   if (result == 200) {
