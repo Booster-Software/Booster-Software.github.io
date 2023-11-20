@@ -315,10 +315,11 @@ function checkSubmitCVrequiredFields() {
   var name = $("#careersCVname").val();
   var email = $("#careersCVemail").val();
   var files = $("#careersCVfile").prop("files");
-
-  if (name && email && files.length > 0) {
+  if (name && emailIsValid(email) && files.length > 0) {
+    $("#careersSubmit").removeClass("disabled");
     return true;
   } else {
+    $("#careersSubmit").addClass("disabled");
     return false;
   }
 }
@@ -383,6 +384,16 @@ function resetSubmitResultMessage() {
   $("#careersSubmitCollapseAlert").removeClass();
   $("#careersSubmitCollapseAlert").addClass("alert");
 }
+
+$("#careersCVname").on("input", function () {
+  checkSubmitCVrequiredFields();
+});
+$("#careersCVemail").on("input", function () {
+  checkSubmitCVrequiredFields();
+});
+$("#careersCVfile").on("input", function () {
+  checkSubmitCVrequiredFields();
+});
 
 $(document).ready(function () {
   $("#careersSubmitSpinner").hide();
@@ -568,7 +579,9 @@ function translateDynamicElements(newLanguage) {
   }
   if (
     extractTextFromHTML($("#careersSubmitCollapseAlertFooterMessage").html()) ==
-    extractTextFromHTML(oldLanguage.careersSubmitCollapseAlertFooterMessageError)
+    extractTextFromHTML(
+      oldLanguage.careersSubmitCollapseAlertFooterMessageError
+    )
   ) {
     $("#careersSubmitCollapseAlertFooterMessage").html(
       newLanguage.careersSubmitCollapseAlertFooterMessageError
@@ -585,3 +598,9 @@ $(document).ready(function () {
   translate();
   setActiveFlag(localStorage.getItem("language"));
 });
+
+//Validations
+function emailIsValid(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
