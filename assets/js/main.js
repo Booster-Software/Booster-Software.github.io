@@ -26,47 +26,57 @@
         scrollTop: 0,
       },
       1500,
-      "easeInOutExpo",
+      "easeInOutExpo"
     );
     return false;
   });
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
   var scrolltoOffset = $("#header").outerHeight() - 17;
-  $(document).on("click", ".nav-menu a, .mobile-nav a, .scrollto", function (e) {
-    if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      if (target.length) {
-        e.preventDefault();
+  $(document).on(
+    "click",
+    ".nav-menu a, .mobile-nav a, .scrollto",
+    function (e) {
+      if (
+        location.pathname.replace(/^\//, "") ==
+          this.pathname.replace(/^\//, "") &&
+        location.hostname == this.hostname
+      ) {
+        var target = $(this.hash);
+        if (target.length) {
+          e.preventDefault();
 
-        var scrollto = target.offset().top - scrolltoOffset;
+          var scrollto = target.offset().top - scrolltoOffset;
 
-        if ($(this).attr("href") == "#header") {
-          scrollto = 0;
+          if ($(this).attr("href") == "#header") {
+            scrollto = 0;
+          }
+
+          $("html, body").animate(
+            {
+              scrollTop: scrollto,
+            },
+            1500,
+            "easeInOutExpo"
+          );
+
+          if ($(this).parents(".nav-menu, .mobile-nav").length) {
+            $(".nav-menu .active, .mobile-nav .active").removeClass("active");
+            $(this).closest("li").addClass("active");
+          }
+
+          if ($("body").hasClass("mobile-nav-active")) {
+            $("body").removeClass("mobile-nav-active");
+            $(".mobile-nav-toggle i").toggleClass(
+              "icofont-navigation-menu icofont-close"
+            );
+            $(".mobile-nav-overly").fadeOut();
+          }
+          return false;
         }
-
-        $("html, body").animate(
-          {
-            scrollTop: scrollto,
-          },
-          1500,
-          "easeInOutExpo",
-        );
-
-        if ($(this).parents(".nav-menu, .mobile-nav").length) {
-          $(".nav-menu .active, .mobile-nav .active").removeClass("active");
-          $(this).closest("li").addClass("active");
-        }
-
-        if ($("body").hasClass("mobile-nav-active")) {
-          $("body").removeClass("mobile-nav-active");
-          $(".mobile-nav-toggle i").toggleClass("icofont-navigation-menu icofont-close");
-          $(".mobile-nav-overly").fadeOut();
-        }
-        return false;
       }
     }
-  });
+  );
 
   // Activate smooth scroll on page load with hash links in the url
   $(document).ready(function () {
@@ -79,7 +89,7 @@
             scrollTop: scrollto,
           },
           1500,
-          "easeInOutExpo",
+          "easeInOutExpo"
         );
       }
     }
@@ -91,12 +101,16 @@
       class: "mobile-nav d-lg-none",
     });
     $("body").append($mobile_nav);
-    $("body").prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
+    $("body").prepend(
+      '<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>'
+    );
     $("body").append('<div class="mobile-nav-overly"></div>');
 
     $(document).on("click", ".mobile-nav-toggle", function (e) {
       $("body").toggleClass("mobile-nav-active");
-      $(".mobile-nav-toggle i").toggleClass("icofont-navigation-menu icofont-close");
+      $(".mobile-nav-toggle i").toggleClass(
+        "icofont-navigation-menu icofont-close"
+      );
       $(".mobile-nav-overly").toggle();
     });
 
@@ -111,7 +125,9 @@
       if (!container.is(e.target) && container.has(e.target).length === 0) {
         if ($("body").hasClass("mobile-nav-active")) {
           $("body").removeClass("mobile-nav-active");
-          $(".mobile-nav-toggle i").toggleClass("icofont-navigation-menu icofont-close");
+          $(".mobile-nav-toggle i").toggleClass(
+            "icofont-navigation-menu icofont-close"
+          );
           $(".mobile-nav-overly").fadeOut();
         }
       }
@@ -167,13 +183,23 @@
     .children(".carousel-item")
     .each(function (index) {
       index === 0
-        ? introCarouselIndicators.append("<li data-target='#introCarousel' data-slide-to='" + index + "' class='active'></li>")
-        : introCarouselIndicators.append("<li data-target='#introCarousel' data-slide-to='" + index + "'></li>");
+        ? introCarouselIndicators.append(
+            "<li data-target='#introCarousel' data-slide-to='" +
+              index +
+              "' class='active'></li>"
+          )
+        : introCarouselIndicators.append(
+            "<li data-target='#introCarousel' data-slide-to='" +
+              index +
+              "'></li>"
+          );
     });
 
   introCarousel.on("slid.bs.carousel", function (e) {
     $(this).find("h2").addClass("animate__animated animate__fadeInDown");
-    $(this).find("p, .btn-get-started").addClass("animate__animated animate__fadeInUp");
+    $(this)
+      .find("p, .btn-get-started")
+      .addClass("animate__animated animate__fadeInUp");
   });
 
   // Skills section
@@ -185,7 +211,7 @@
     },
     {
       offset: "80%",
-    },
+    }
   );
 
   // jQuery counterUp (used in Facts section)
@@ -317,14 +343,26 @@ function showSubmitResult(result) {
   getTranslation(function (language) {
     if (result == 200) {
       $("#careersSubmitCollapseAlert").addClass("alert-success");
-      $("#careersSubmitCollapseAlertHeader").html(language.careersSubmitCollapseAlertHeaderOk);
-      $("#careersSubmitCollapseAlertMainMessage").html(language.careersSubmitCollapseAlertMainMessageOk);
-      $("#careersSubmitCollapseAlertFooterMessage").html(language.careersSubmitCollapseAlertFooterMessageOk);
+      $("#careersSubmitCollapseAlertHeader").html(
+        language.careersSubmitCollapseAlertHeaderOk
+      );
+      $("#careersSubmitCollapseAlertMainMessage").html(
+        language.careersSubmitCollapseAlertMainMessageOk
+      );
+      $("#careersSubmitCollapseAlertFooterMessage").html(
+        language.careersSubmitCollapseAlertFooterMessageOk
+      );
     } else {
       $("#careersSubmitCollapseAlert").addClass("alert-danger");
-      $("#careersSubmitCollapseAlertHeader").html(language.careersSubmitCollapseAlertHeaderError);
-      $("#careersSubmitCollapseAlertMainMessage").html(language.careersSubmitCollapseAlertMainMessageError);
-      $("#careersSubmitCollapseAlertFooterMessage").html(language.careersSubmitCollapseAlertFooterMessageError);
+      $("#careersSubmitCollapseAlertHeader").html(
+        language.careersSubmitCollapseAlertHeaderError
+      );
+      $("#careersSubmitCollapseAlertMainMessage").html(
+        language.careersSubmitCollapseAlertMainMessageError
+      );
+      $("#careersSubmitCollapseAlertFooterMessage").html(
+        language.careersSubmitCollapseAlertFooterMessageError
+      );
     }
     $("#careersSubmitCollapse").collapse("show");
   });
@@ -367,11 +405,15 @@ function setLanguage(newLang) {
 }
 
 function setActiveFlag(lang) {
-  document.getElementById("languageFlag" + (lang || "en").toUpperCase()).classList.add("active-language-flag");
+  document
+    .getElementById("languageFlag" + (lang || "en").toUpperCase())
+    .classList.add("active-language-flag");
 }
 
 function setInactiveFlag(lang) {
-  document.getElementById("languageFlag" + (lang || "en").toUpperCase()).classList.remove("active-language-flag");
+  document
+    .getElementById("languageFlag" + (lang || "en").toUpperCase())
+    .classList.remove("active-language-flag");
 }
 
 function translate() {
@@ -391,11 +433,17 @@ function translate() {
     $("#homeCarouselPrevious").html(language.homeCarouselPrevious);
     $("#homeCarouselNext").html(language.homeCarouselNext);
     $("#featuredServicesTitle1").html(language.featuredServicesTitle1);
-    $("#featuredServicesDescription1").html(language.featuredServicesDescription1);
+    $("#featuredServicesDescription1").html(
+      language.featuredServicesDescription1
+    );
     $("#featuredServicesTitle2").html(language.featuredServicesTitle2);
-    $("#featuredServicesDescription2").html(language.featuredServicesDescription2);
+    $("#featuredServicesDescription2").html(
+      language.featuredServicesDescription2
+    );
     $("#featuredServicesTitle3").html(language.featuredServicesTitle3);
-    $("#featuredServicesDescription3").html(language.featuredServicesDescription3);
+    $("#featuredServicesDescription3").html(
+      language.featuredServicesDescription3
+    );
     $("#aboutUsDescription").html(language.aboutUsDescription);
     $("#aboutUsTitle").html(language.aboutUs);
     $("#aboutUsTitle1").html(language.aboutUsTitle1);
@@ -417,7 +465,9 @@ function translate() {
     $("#servicesTitle5").html(language.servicesTitle5);
     $("#servicesDescription5").html(language.servicesDescription5);
     $("#letsWorkTogetherTitle").html(language.letsWorkTogetherTitle);
-    $("#letsWorkTogetherDescription").html(language.letsWorkTogetherDescription);
+    $("#letsWorkTogetherDescription").html(
+      language.letsWorkTogetherDescription
+    );
     $("#letsWorkTogetherCTA").html(language.contactUs);
     $("#ourClients").html(language.ourClients);
     $("#teamTitle").html(language.teamTitle);
@@ -450,3 +500,8 @@ $(document).ready(function () {
   translate();
   setActiveFlag(localStorage.getItem("language"));
 });
+
+// Booster Factory fancy background
+$(".fancyCubesBackground").append(
+  '<div><ul class="cubes">' + "<li></li>".repeat(10) + "</ul></div>"
+);
