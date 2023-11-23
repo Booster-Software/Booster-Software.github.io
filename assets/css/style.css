@@ -121,23 +121,24 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-#header {
+.header {
   transition: all 0.5s;
   z-index: 997;
   padding: 26px 0;
   background: rgba(0, 0, 0, 0.9);
 }
 
-#header.header-transparent {
+
+.header-transparent {
   background: transparent;
 }
 
-#header.header-scrolled {
+.header-scrolled {
   background: rgba(0, 0, 0, 0.9);
   padding: 18px 0;
 }
 
-#header .logo {
+.header .logo {
   font-size: 34px;
   margin: 0;
   padding: 0;
@@ -149,16 +150,16 @@ h1, h2, h3, h4, h5, h6 {
   border-left: 4px solid #18d26e;
 }
 
-#header .logo a {
+.header .logo a {
   color: #fff;
 }
 
-#header .logo img {
+.header .logo img {
   max-height: 80px;
 }
 
 @media (max-width: 992px) {
-  #header .logo {
+  .header .logo {
     font-size: 28px;
   }
 }
@@ -819,7 +820,7 @@ section {
 #careers {
   background: #fff;
   background-size: cover;
-  padding: 60px 0 60px 0;
+  padding: 160px 0 60px 0;
 }
 
 #careers .container {
@@ -1710,6 +1711,7 @@ section {
 /* Main title Section
 --------------------------------*/
 #factoryMainTitle {
+  padding-top: 100px;
   position: relative;
   color: #DBDBDB;
 }
@@ -1722,13 +1724,13 @@ section {
 
 /* Perks Section
 --------------------------------*/
-#factoryPerks {
+#factoryCustomSoftware {
   background-size: cover;
   padding: 60px 0 40px 0;
   position: relative;
 }
 
-#factoryPerks::before {
+#factoryCustomSoftware::before {
   content: '';
   position: absolute;
   left: 0;
@@ -1739,27 +1741,27 @@ section {
   z-index: 9;
 }
 
-#factoryPerks .container {
+#factoryCustomSoftware .container {
   position: relative;
   z-index: 10;
 }
 
-#factoryPerks .factoryPerks-col {
+#factoryCustomSoftware .factoryCustomSoftware-col {
   background: #fff;
   border-radius: 0 0 4px 4px;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
   margin-bottom: 20px;
 }
 
-#factoryPerks .factoryPerks-col .img {
+#factoryCustomSoftware .factoryCustomSoftware-col .img {
   position: relative;
 }
 
-#factoryPerks .factoryPerks-col .img img {
+#factoryCustomSoftware .factoryCustomSoftware-col .img img {
   border-radius: 4px 4px 0 0;
 }
 
-#factoryPerks .factoryPerks-col .icon {
+#factoryCustomSoftware .factoryCustomSoftware-col .icon {
   width: 64px;
   height: 64px;
   padding-top: 8px;
@@ -1774,22 +1776,22 @@ section {
   transition: 0.3s;
 }
 
-#factoryPerks .factoryPerks-col i {
+#factoryCustomSoftware .factoryCustomSoftware-col i {
   font-size: 36px;
   line-height: 1;
   color: #fff;
   transition: 0.3s;
 }
 
-#factoryPerks .factoryPerks-col:hover .icon {
+#factoryCustomSoftware .factoryCustomSoftware-col:hover .icon {
   background-color: #fff;
 }
 
-#factoryPerks .factoryPerks-col:hover i {
+#factoryCustomSoftware .factoryCustomSoftware-col:hover i {
   color: #18d26e;
 }
 
-#factoryPerks .factoryPerks-col h2 {
+#factoryCustomSoftware .factoryCustomSoftware-col h2 {
   color: #000;
   text-align: center;
   font-weight: 700;
@@ -1798,15 +1800,15 @@ section {
   margin: 40px 0 12px 0;
 }
 
-#factoryPerks .factoryPerks-col h2 a {
+#factoryCustomSoftware .factoryCustomSoftware-col h2 a {
   color: #000;
 }
 
-#factoryPerks .factoryPerks-col h2 a:hover {
+#factoryCustomSoftware .factoryCustomSoftware-col h2 a:hover {
   color: #18d26e;
 }
 
-#factoryPerks .factoryPerks-col p {
+#factoryCustomSoftware .factoryCustomSoftware-col p {
   font-size: 14px;
   line-height: 24px;
   color: #333;
@@ -1816,34 +1818,18 @@ section {
 
 /* e-Commerce Section
 --------------------------------*/
-#factoryEcommerce .box {
-  padding-top: 15px;
-}
-
-#factoryEcommerce .box:hover {
-  background: #18d26e;
-  border-radius: 1%;
-  color: black;
-}
-
-#factoryEcommerce .box:hover a {
-  color: white;
-}
-
-/****/
-
-#eCommercePortfolio {
+#factoryEcommercePortfolio {
   padding: 60px 0;
 }
 
-#eCommercePortfolio figure {
+#factoryEcommercePortfolio figure {
   width: 100%;
   overflow: auto;
   text-align: center;
   align-items: center;
 }
 
-#eCommercePortfolio .portfolio-item figure .link-preview, #eCommercePortfolio .portfolio-item figure .ecommerceDetails {
+#factoryEcommercePortfolio .portfolio-item figure .link-preview, #factoryEcommercePortfolio .portfolio-item figure .ecommerceDetails {
   position: absolute;
   display: inline-block;
   opacity: 0;
@@ -1851,7 +1837,7 @@ section {
   color: white;
 }
 
-#eCommercePortfolio .portfolio-item figure:hover .ecommerceDetails {
+#factoryEcommercePortfolio .portfolio-item figure:hover .ecommerceDetails {
   left: 1%;
   right: 1%;
   top: 1%;
@@ -1863,18 +1849,18 @@ section {
   opacity: 1;
 }
 
-#eCommercePortfolio #portfolio-flters li:hover, #eCommercePortfolio #portfolio-flters li.filter-active {
+#factoryEcommercePortfolio #portfolio-flters li:hover, #factoryEcommercePortfolio #portfolio-flters li.filter-active {
   background: #18d26e;
   color: #fff;
 }
-#eCommercePortfolio #portfolio-flters {
+#factoryEcommercePortfolio #portfolio-flters {
   padding: 0;
   margin: 5px 0 35px 0;
   list-style: none;
   text-align: center;
 }
 
-#eCommercePortfolio #portfolio-flters li {
+#factoryEcommercePortfolio #portfolio-flters li {
   cursor: pointer;
   margin: 15px 15px 15px 0;
   display: inline-block;
@@ -1889,22 +1875,22 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-#eCommercePortfolio .portfolio-wrap {
+#factoryEcommercePortfolio .portfolio-wrap {
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
   transition: 0.3s;
 }
 
-#eCommercePortfolio .portfolio-wrap:hover {
+#factoryEcommercePortfolio .portfolio-wrap:hover {
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.16);
 }
 
-#eCommercePortfolio .portfolio-item {
+#factoryEcommercePortfolio .portfolio-item {
   position: relative;
   height: 360px;
   overflow: hidden;
 }
 
-#eCommercePortfolio .portfolio-item figure {
+#factoryEcommercePortfolio .portfolio-item figure {
   background: #000;
   overflow: hidden;
   height: 240px;
@@ -1913,12 +1899,12 @@ section {
   margin: 0;
 }
 
-#eCommercePortfolio .portfolio-item figure:hover img {
+#factoryEcommercePortfolio .portfolio-item figure:hover img {
   opacity: 0.4;
   transition: 0.3s;
 }
 
-#eCommercePortfolio .portfolio-item .portfolio-info {
+#factoryEcommercePortfolio .portfolio-item .portfolio-info {
   background: #fff;
   text-align: center;
   padding: 10px 5px 10px 5px;
@@ -1926,7 +1912,7 @@ section {
   border-radius: 0 0 3px 3px;
 }
 
-#eCommercePortfolio .portfolio-item .portfolio-info h4 {
+#factoryEcommercePortfolio .portfolio-item .portfolio-info h4 {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 5px;
@@ -1935,12 +1921,12 @@ section {
   cursor: pointer;
 }
 
-#eCommercePortfolio .portfolio-item .portfolio-info h4:hover {
+#factoryEcommercePortfolio .portfolio-item .portfolio-info h4:hover {
   color: #18d26e;
   cursor: pointer;
 }
 
-#eCommercePortfolio .portfolio-item .portfolio-info p {
+#factoryEcommercePortfolio .portfolio-item .portfolio-info p {
   padding: 0;
   margin: 0;
   color: #b8b8b8;

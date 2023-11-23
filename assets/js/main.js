@@ -32,7 +32,7 @@
   });
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
-  var scrolltoOffset = $("#header").outerHeight() - 17;
+  var scrolltoOffset = $(".header").outerHeight() - 17;
   $(document).on(
     "click",
     ".nav-menu a, .mobile-nav a, .scrollto",
@@ -48,7 +48,7 @@
 
           var scrollto = target.offset().top - scrolltoOffset;
 
-          if ($(this).attr("href") == "#header") {
+          if ($(this).attr("href") == ".header") {
             scrollto = 0;
           }
 
@@ -139,14 +139,14 @@
   // Header scroll class
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
-      $("#header").addClass("header-scrolled");
+      $(".header").addClass("header-scrolled");
     } else {
-      $("#header").removeClass("header-scrolled");
+      $(".header").removeClass("header-scrolled");
     }
   });
 
   if ($(window).scrollTop() > 100) {
-    $("#header").addClass("header-scrolled");
+    $(".header").addClass("header-scrolled");
   }
 
   // Navigation active state on scroll

@@ -66,7 +66,7 @@
 
 <body>
     <!-- ======= Header ======= -->
-    <header id="header">
+    <header id="factoryHeader" class="header fixed-top">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-11 d-flex align-items-center">
@@ -77,8 +77,11 @@
                     </h1>
                     <nav class="nav-menu d-none d-lg-block">
                         <ul class="align-items-center">
+                            <li class="d-none"><a href="/" id="navMenuHidden"></a></li>
                             <li><a href="/" id="navMenuHome">Home</a></li>
-                            <li class="active"><a href="#factory" id="navMenuFactory">Booster Factory</a></li>
+                            <li class="active"><a href="#factoryMainTitle" id="navMenuFactory">Booster Factory</a></li>
+                            <li><a href="#factoryCustomSoftware" id="navMenuFactoryCustomSoftware">Tailor-made software</a></li>
+                            <li><a href="#factoryEcommercePortfolio" id="navMenuFactoryEcommercePortfolio">e-Commerce</a></li>
                             <li><a href="/#contact" id="navMenuContactUs">Contact Us</a></li>
                             <li>
                                 <img src="../assets/img/country-flag/us.svg" class="language-flag" onclick="setLanguage('en')" id="languageFlagEN">
@@ -92,89 +95,89 @@
     </header><!-- End Header -->    
     <!-- ======= Booster Factory Sections ======= -->
     <div id="factory">
-        <section id="factoryMainTitle">
-            <div class="card justify-content-center align-items-center fancyCubesBackground">
+        <section id="factoryMainTitle" class="fancyCubesBackground">
+            <div class="card justify-content-center align-items-center">
                 <h1>Welcome to the <b>Booster Factory</b></h1>
                 <p>a hub of creativity, expertise, and cutting-edge technology, dedicated to transforming your ideas into powerful, scalable, and user-friendly applications.</p>           
             </div>
         </section>
-        <section id="factoryPerks">
+        <section id="factoryCustomSoftware">
             <div class="container" data-aos="fade-up">
                 <header class="section-header">
-                    <h3 id="factoryPerksTitle">The perks of tailor-made software</h3>
-                    <p id="factoryPerksDescription">As a software specially developed for your organization, you can find many advantages like...</p>
+                    <h3 id="factoryCustomSoftwareTitle">The perks of tailor-made software</h3>
+                    <p id="factoryCustomSoftwareDescription">As a software specially developed for your organization, you can find many advantages like...</p>
                 </header>
-                <div class="row factoryPerks-cols">
+                <div class="row factoryCustomSoftware-cols">
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="factoryPerks-col">
+                        <div class="factoryCustomSoftware-col">
                             <div class="img">
                                 <img src="../assets/img/about-mission.jpg" alt="" class="img-fluid">
                                 <div class="icon"><i class="ion-ios-body-outline"></i></div>
                             </div>
-                            <h2 class="title" id="factoryPerksTitle1"><a href="#">Thoughtful process</a></h2>
-                            <p id="factoryPerksDescription1">
+                            <h2 class="title" id="factoryCustomSoftwareTitle1"><a href="#">Thoughtful process</a></h2>
+                            <p id="factoryCustomSoftwareDescription1">
                                 The project is designed based on your unique business requirements.
                             </p>
                         </div>
                     </div>
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="factoryPerks-col">
+                        <div class="factoryCustomSoftware-col">
                             <div class="img">
                                 <img src="../assets/img/about-plan.jpg" alt="" class="img-fluid">
                                 <div class="icon"><i class="ion-ios-rose-outline"></i></div>
                             </div>
-                            <h2 class="title"><a href="#" id="factoryPerksTitle2">Customized layouts</a></h2>
-                            <p id="factoryPerksDescription2">
+                            <h2 class="title"><a href="#" id="factoryCustomSoftwareTitle2">Customized layouts</a></h2>
+                            <p id="factoryCustomSoftwareDescription2">
                                 There are no limitations on customization options, so a lot of variety is possible.
                             </p>
                         </div>
                     </div>
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="factoryPerks-col">
+                        <div class="factoryCustomSoftware-col">
                             <div class="img">
                                 <img src="../assets/img/about-vision.jpg" alt="" class="img-fluid">
                                 <div class="icon"><i class="ion-ios-glasses-outline"></i></div>
                             </div>
-                            <h2 class="title"><a href="#" id="factoryPerksTitle3">Complete control</a></h2>
-                            <p id="factoryPerksDescription3">
+                            <h2 class="title"><a href="#" id="factoryCustomSoftwareTitle3">Complete control</a></h2>
+                            <p id="factoryCustomSoftwareDescription3">
                                 As a stakeholder of the project, you always have the last word.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="row factoryPerks-cols">
+                <div class="row factoryCustomSoftware-cols">
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="factoryPerks-col">
+                        <div class="factoryCustomSoftware-col">
                             <div class="img">
                                 <img src="../assets/img/about-mission.jpg" alt="" class="img-fluid">
                                 <div class="icon"><i class="ion-ios-checkmark-outline"></i></div>
                             </div>
-                            <h2 class="title" id="factoryPerksTitle4"><a href="#">Support costs included</a></h2>
-                            <p id="factoryPerksDescription4">
+                            <h2 class="title" id="factoryCustomSoftwareTitle4"><a href="#">Support costs included</a></h2>
+                            <p id="factoryCustomSoftwareDescription4">
                                 Necessary support is provided at all stages of the project.
                             </p>
                         </div>
                     </div>
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="factoryPerks-col">
+                        <div class="factoryCustomSoftware-col">
                             <div class="img">
                                 <img src="../assets/img/about-plan.jpg" alt="" class="img-fluid">
                                 <div class="icon"><i class="ion-ios-people-outline"></i></div>
                             </div>
-                            <h2 class="title"><a href="#" id="factoryPerksTitle5">Long-term relationship likely</a></h2>
-                            <p id="factoryPerksDescription5">
+                            <h2 class="title"><a href="#" id="factoryCustomSoftwareTitle5">Long-term relationship likely</a></h2>
+                            <p id="factoryCustomSoftwareDescription5">
                                 This is because project delivery lasts over a much longer period and includes post-production support.
                             </p>
                         </div>
                     </div>
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="factoryPerks-col">
+                        <div class="factoryCustomSoftware-col">
                             <div class="img">
                                 <img src="../assets/img/about-vision.jpg" alt="" class="img-fluid">
                                 <div class="icon"><i class="ion-ios-cog-outline"></i></div>
                             </div>
-                            <h2 class="title"><a href="#" id="factoryPerksTitle6">Real-time modification and flexibility</a></h2>
-                            <p id="factoryPerksDescription6">
+                            <h2 class="title"><a href="#" id="factoryCustomSoftwareTitle6">Real-time modification and flexibility</a></h2>
+                            <p id="factoryCustomSoftwareDescription6">
                                 Development conditions are flexible enough to meet all your requirements regarding the final result.
                             </p>
                         </div>
@@ -182,41 +185,138 @@
                 </div>
             </div>
         </section>
-        <section id="factoryEcommerce">
+        <section id="factoryEcommercePortfolio" class="section-bg">
             <div class="container" data-aos="fade-up">
-                <header class="section-header wow fadeInUp">
-                    <h3 id="eCommerceTitle">e-Commerce</h3>
-                    <p id="eCommerceDescription">In the dynamic landscape of online business, having a robust and scalable e-commerce platform is paramount.</p>
+                <header class="section-header">
+                    <h3 class="section-title">e-Commerce</h3>
                 </header>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="200">
-                        <h4 class="title" id="eCommerceTitle1"><a href="">CUSTOM E-COMMERCE DEVELOPMENT</a></h4>
-                        <p class="description" id="eCommerceDescription1">Our custom e-commerce development services are tailored to meet the unique needs of your business. Whether you're a startup entering the e-commerce space or an established brand looking to revamp your online presence, we create solutions that align with your brand identity, values, and long-term goals.</p>
+                <div class="row" data-aos="fade-up" data-aos-delay="100"">
+                    <div class=" col-lg-12">
+                        <ul id="portfolio-flters">
+                            <li data-filter="*" class="filter-active">All</li>
+                            <li data-filter=".filter-app">App</li>
+                            <li data-filter=".filter-card">Card</li>
+                            <li data-filter=".filter-web">Web</li>
+                        </ul>
                     </div>
-                    <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
-                        <h4 class="title" id="eCommerceTitle2"><a href="">FEATURE-RICH ONLINE STORES</a></h4>
-                        <p class="description" id="eCommerceDescription2">Empower your business with feature-rich online stores that captivate and convert visitors into loyal customers. From intuitive product catalogs and seamless checkout processes to secure payment gateways and personalized user accounts, we ensure that every aspect of your e-commerce platform enhances the user experience.</p>
+                </div>
+                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <figure>
+                                <img src="../assets/img/portfolio/app1.jpg" class="img-fluid" alt="">
+                                <p class="ecommerceDetails" id="factoryEcommercePortfolioDescription1">Our custom e-commerce development services are tailored to meet the unique needs of your business. Whether you're a startup entering the e-commerce space or an established brand looking to revamp your online presence, we create solutions that align with your brand identity, values, and long-term goals.</p>
+                            </figure>
+                            <div class="portfolio-info justify-content-center align-items-center">
+                                <h4 id="factoryEcommercePortfolioTitle1">CUSTOM E-COMMERCE DEVELOPMENT</h4>
+                                <p>App</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="300">
-                        <h4 class="title" id="eCommerceTitle3"><a href="">MOBILE COMMERCE (M-COMMERCE)</a></h4>
-                        <p class="description" id="eCommerceDescription3">With the rise of mobile usage, we develop e-commerce solutions optimized for mobile devices, providing a seamless shopping experience on smartphones and tablets. From responsive design to mobile app development, we enable your customers to browse, shop, and make purchases effortlessly from any device.</p>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <figure>
+                                <img src="../assets/img/portfolio/web3.jpg" class="img-fluid" alt="">
+                                <p class="ecommerceDetails" id="factoryEcommercePortfolioDescription2">Empower your business with feature-rich online stores that captivate and convert visitors into loyal customers. From intuitive product catalogs and seamless checkout processes to secure payment gateways and personalized user accounts, we ensure that every aspect of your e-commerce platform enhances the user experience.</p>
+                            </figure>
+                            <div class="portfolio-info">
+                                <h4 id="factoryEcommercePortfolioTitle2">FEATURE-RICH ONLINE STORES</h4>
+                                <p>Web</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="200">
-                        <h4 class="title" id="eCommerceTitle4"><a href="">E-COMMERCE INTEGRATION</a></h4>
-                        <p class="description" id="eCommerceDescription4">Integrate your e-commerce platform with third-party tools and services to enhance functionality and efficiency. Whether it's integrating with payment gateways, inventory management systems, or customer relationship management (CRM) software, we ensure a seamless and interconnected e-commerce ecosystem.</p>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <figure>
+                                <img src="../assets/img/portfolio/app2.jpg" class="img-fluid" alt="">
+                                <p class="ecommerceDetails" id="factoryEcommercePortfolioDescription3">With the rise of mobile usage, we develop e-commerce solutions optimized for mobile devices, providing a seamless shopping experience on smartphones and tablets. From responsive design to mobile app development, we enable your customers to browse, shop, and make purchases effortlessly from any device.</p>
+                            </figure>
+                            <div class="portfolio-info">
+                                <h4 id="factoryEcommercePortfolioTitle3">MOBILE COMMERCE (M-COMMERCE)</h4>
+                                <p>App</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="200">
-                        <h4 class="title" id="eCommerceTitle5"><a href="">SECURITY AND COMPLIANCE</a></h4>
-                        <p class="description" id="eCommerceDescription5">Security is paramount in e-commerce. Our solutions prioritize the protection of your customer's data and transactions. We implement industry-standard security measures and ensure compliance with regulations, giving you and your customers peace of mind.</p>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-wrap">
+                            <figure>
+                                <img src="../assets/img/portfolio/card2.jpg" class="img-fluid" alt="">
+                                <p class="ecommerceDetails" id="factoryEcommercePortfolioDescription4">Integrate your e-commerce platform with third-party tools and services to enhance functionality and efficiency. Whether it's integrating with payment gateways, inventory management systems, or customer relationship management (CRM) software, we ensure a seamless and interconnected e-commerce ecosystem.</p>
+                            </figure>
+                            <div class="portfolio-info">
+                                <h4 id="factoryEcommercePortfolioTitle4">E-COMMERCE INTEGRATION</h4>
+                                <p>Card</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="200">
-                        <h4 class="title" id="eCommerceTitle6"><a href="">ANALYTICS AND REPORTING</a></h4>
-                        <p class="description" id="eCommerceDescription6">Make informed business decisions with comprehensive analytics and reporting features. Track sales, monitor customer behavior, and gain insights into your e-commerce performance. Our solutions empower you with the data you need to optimize your strategy and drive growth.</p>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <figure>
+                                <img src="../assets/img/portfolio/web2.jpg" class="img-fluid" alt="">
+                                <p class="ecommerceDetails" id="factoryEcommercePortfolioDescription5">Security is paramount in e-commerce. Our solutions prioritize the protection of your customer's data and transactions. We implement industry-standard security measures and ensure compliance with regulations, giving you and your customers peace of mind.</p>
+                            </figure>
+                            <div class="portfolio-info">
+                                <h4 id="factoryEcommercePortfolioTitle5">SECURITY AND COMPLIANCE</h4>
+                                <p>Web</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <figure>
+                                <img src="../assets/img/portfolio/app3.jpg" class="img-fluid" alt="">
+                                <p class="ecommerceDetails" id="factoryEcommercePortfolioDescription6">Make informed business decisions with comprehensive analytics and reporting features. Track sales, monitor customer behavior, and gain insights into your e-commerce performance. Our solutions empower you with the data you need to optimize your strategy and drive growth.</p>
+                            </figure>
+                            <div class="portfolio-info">
+                                <h4 id="factoryEcommercePortfolioTitle6">ANALYTICS AND REPORTING</h4>
+                                <p>App</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-wrap">
+                            <figure>
+                                <img src="../assets/img/portfolio/card1.jpg" class="img-fluid" alt="">
+                                <a href="assets/img/portfolio/card1.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Card 1"><i class="ion ion-eye"></i></a>
+                                <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                            </figure>
+                            <div class="portfolio-info">
+                                <h4>Card 1</h4>
+                                <p>Card</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-wrap">
+                            <figure>
+                                <img src="../assets/img/portfolio/card3.jpg" class="img-fluid" alt="">
+                                <a href="assets/img/portfolio/card3.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Card 3"><i class="ion ion-eye"></i></a>
+                                <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                            </figure>
+                            <div class="portfolio-info">
+                                <h4>Card 3</h4>
+                                <p>Card</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <figure>
+                                <img src="../assets/img/portfolio/web1.jpg" class="img-fluid" alt="">
+                                <a href="assets/img/portfolio/web1.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Web 1"><i class="ion ion-eye"></i></a>
+                                <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                            </figure>
+                            <div class="portfolio-info">
+                                <h4>Web 1</h4>
+                                <p>Web</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
         <!-- ======= Call To Action Section ======= -->
-        <section id="call-to-action">
+        <section id="call-to-action" class="fancyCubesBackground">
             <div class="container text-center" data-aos="zoom-in">
                 <h3 id="digitalPartnerTitle">YOUR DIGITAL PARTNER IN CUSTOM SOFTWARE</h3>
                 <p id="digitalPartnerDescription">Ready to revolutionize your online business? Let's discuss how our e-commerce solutions can empower your brand, increase sales, and deliver an unparalleled shopping experience to your customers.</p>
@@ -226,139 +326,6 @@
             <section id="factoryProcess"></section>
         </section>
     </div><!-- End Booster Factory Sections -->
-     <!-- ======= Portfolio Section ======= -->
-     <section id="eCommercePortfolio" class="section-bg">
-        <div class="container" data-aos="fade-up">
-            <header class="section-header">
-                <h3 class="section-title">Our Portfolio</h3>
-            </header>
-            <div class="row" data-aos="fade-up" data-aos-delay="100"">
-                <div class=" col-lg-12">
-                    <ul id="portfolio-flters">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-app">App</li>
-                        <li data-filter=".filter-card">Card</li>
-                        <li data-filter=".filter-web">Web</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <figure>
-                            <img src="../assets/img/portfolio/app1.jpg" class="img-fluid" alt="">
-                            <p class="ecommerceDetails" id="eCommercePortfolioDescription1">Our custom e-commerce development services are tailored to meet the unique needs of your business. Whether you're a startup entering the e-commerce space or an established brand looking to revamp your online presence, we create solutions that align with your brand identity, values, and long-term goals.</p>
-                        </figure>
-                        <div class="portfolio-info justify-content-center align-items-center">
-                            <h4 id="eCommercePortfolioTitle1">CUSTOM E-COMMERCE DEVELOPMENT</h4>
-                            <p>App</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-wrap">
-                        <figure>
-                            <img src="../assets/img/portfolio/web3.jpg" class="img-fluid" alt="">
-                            <p class="ecommerceDetails" id="eCommercePortfolioDescription2">Empower your business with feature-rich online stores that captivate and convert visitors into loyal customers. From intuitive product catalogs and seamless checkout processes to secure payment gateways and personalized user accounts, we ensure that every aspect of your e-commerce platform enhances the user experience.</p>
-                        </figure>
-                        <div class="portfolio-info">
-                            <h4 id="eCommercePortfolioTitle2">FEATURE-RICH ONLINE STORES</h4>
-                            <p>Web</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <figure>
-                            <img src="../assets/img/portfolio/app2.jpg" class="img-fluid" alt="">
-                            <p class="ecommerceDetails" id="eCommercePortfolioDescription3">With the rise of mobile usage, we develop e-commerce solutions optimized for mobile devices, providing a seamless shopping experience on smartphones and tablets. From responsive design to mobile app development, we enable your customers to browse, shop, and make purchases effortlessly from any device.</p>
-                        </figure>
-                        <div class="portfolio-info">
-                            <h4 id="eCommercePortfolioTitle3">MOBILE COMMERCE (M-COMMERCE)</h4>
-                            <p>App</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <figure>
-                            <img src="../assets/img/portfolio/card2.jpg" class="img-fluid" alt="">
-                            <p class="ecommerceDetails" id="eCommercePortfolioDescription4">Integrate your e-commerce platform with third-party tools and services to enhance functionality and efficiency. Whether it's integrating with payment gateways, inventory management systems, or customer relationship management (CRM) software, we ensure a seamless and interconnected e-commerce ecosystem.</p>
-                        </figure>
-                        <div class="portfolio-info">
-                            <h4 id="eCommercePortfolioTitle4">E-COMMERCE INTEGRATION</h4>
-                            <p>Card</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-wrap">
-                        <figure>
-                            <img src="../assets/img/portfolio/web2.jpg" class="img-fluid" alt="">
-                            <p class="ecommerceDetails" id="eCommercePortfolioDescription5">Security is paramount in e-commerce. Our solutions prioritize the protection of your customer's data and transactions. We implement industry-standard security measures and ensure compliance with regulations, giving you and your customers peace of mind.</p>
-                        </figure>
-                        <div class="portfolio-info">
-                            <h4 id="eCommercePortfolioTitle5">SECURITY AND COMPLIANCE</h4>
-                            <p>Web</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <figure>
-                            <img src="../assets/img/portfolio/app3.jpg" class="img-fluid" alt="">
-                            <p class="ecommerceDetails" id="eCommercePortfolioDescription6">Make informed business decisions with comprehensive analytics and reporting features. Track sales, monitor customer behavior, and gain insights into your e-commerce performance. Our solutions empower you with the data you need to optimize your strategy and drive growth.</p>
-                        </figure>
-                        <div class="portfolio-info">
-                            <h4 id="eCommercePortfolioTitle6">ANALYTICS AND REPORTING</h4>
-                            <p>App</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <figure>
-                            <img src="../assets/img/portfolio/card1.jpg" class="img-fluid" alt="">
-                            <a href="assets/img/portfolio/card1.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Card 1"><i class="ion ion-eye"></i></a>
-                            <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                        </figure>
-                        <div class="portfolio-info">
-                            <h4>Card 1</h4>
-                            <p>Card</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <figure>
-                            <img src="../assets/img/portfolio/card3.jpg" class="img-fluid" alt="">
-                            <a href="assets/img/portfolio/card3.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Card 3"><i class="ion ion-eye"></i></a>
-                            <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                        </figure>
-                        <div class="portfolio-info">
-                            <h4>Card 3</h4>
-                            <p>Card</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-wrap">
-                        <figure>
-                            <img src="../assets/img/portfolio/web1.jpg" class="img-fluid" alt="">
-                            <a href="assets/img/portfolio/web1.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Web 1"><i class="ion ion-eye"></i></a>
-                            <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                        </figure>
-                        <div class="portfolio-info">
-                            <h4>Web 1</h4>
-                            <p>Web</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Portfolio Section -->
-    <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="footer-top">
             <div class="container">
@@ -395,6 +362,7 @@
                             <a href="https://twitter.com/BoosterSoftware" target="_blank" rel="noopener noreferrer" class="twitter"><i class="fa fa-twitter"></i></a>
                             <a href="https://www.instagram.com/booster.software/" target="_blank" rel="noopener noreferrer" class="instagram"><i class="fa fa-instagram"></i></a>
                             <a href="http://api.whatsapp.com/send?phone=59897547108&text=Hello,%20I%20have%20a%20question" target="_blank" rel="noopener noreferrer" class="whatsapp"><i class="fa fa-whatsapp"></i></a>
+                            <a href="https://telegram.me/+59897547108" target="_blank" rel="noopener noreferrer" class="telegram"><i class="fa fa-telegram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -406,6 +374,7 @@
             </div>
         </div>
     </footer><!-- End Footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     <!-- Google reCAPTCHA script -->
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <!-- Vendor JS Files -->
