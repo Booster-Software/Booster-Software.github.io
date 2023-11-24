@@ -1818,6 +1818,61 @@ section {
 
 /* e-Commerce Section
 --------------------------------*/
+#ecommerce {
+  background: url(/assets/img/factory-ecommerce/ecommerce-bg.jpg) center top no-repeat fixed;
+  background-size: cover;
+  padding: 60px 0 0 0;
+  position: relative;
+}
+
+#ecommerce::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.88);
+  z-index: 9;
+}
+
+#ecommerce .container {
+  position: relative;
+  z-index: 10;
+}
+
+#ecommerce .facts-img {
+  text-align: center;
+  padding-top: 30px;
+}
+
+
+/* e-Commerce Media Section
+--------------------------------*/
+
+#ecommerceMedia {
+  padding: 1;
+  background: linear-gradient(141deg, white 15%, #18d26e 50%, white 85%);
+}
+
+#ecommerceMedia .media {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  padding: 1rem;
+  position: sticky;
+  width: 100%;
+}
+
+#ecommerceMedia img {
+  max-width: 75%;
+  padding: 15px;
+}
+
+/* e-Commerce Portfolio Section
+--------------------------------*/
 #factoryEcommercePortfolio {
   padding: 60px 0;
 }
