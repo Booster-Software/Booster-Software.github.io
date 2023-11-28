@@ -1857,21 +1857,25 @@ section {
 
 #ecommerceMedia .media {
   align-items: center;
-  /* bottom: 0; */
   display: flex;
   justify-content: center;
   height: 100vh;
-  /* padding: 1rem; */
   position: sticky;
-  width: 75%;
+  width: 100%;
   max-height: 100%;
-  margin:0 auto;
 }
 
 #ecommerceMedia img {
   max-width: 100%;
   max-height: 75vh;
   padding: 15px;
+}
+
+@media (max-width: 767px) {
+  #ecommerceMedia .media {
+    max-height: 75vh;
+    margin-bottom: 15%;
+  }
 }
 
 /* Contact Us Section
