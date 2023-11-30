@@ -1912,8 +1912,16 @@ section {
 
 @media (max-width: 767px) {
   #ecommerceMedia .media {
-    max-height: 75vh;
+    height: 1000px;
     margin-bottom: 15vh;
+  }
+
+  #ecommerceMedia h2 {
+    font-size: 45px;
+  }
+  
+  #ecommerceMedia p {
+    font-size: 25px;
   }
 
   #ecommerceMedia .media-container {
