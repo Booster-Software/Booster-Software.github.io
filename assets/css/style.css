@@ -1771,6 +1771,10 @@ section {
   margin-bottom: 20px;
 }
 
+#factoryCustomSoftware .factoryCustomSoftware-col .title {
+  padding: 0px 20px;
+}
+
 #factoryCustomSoftware .factoryCustomSoftware-col .img {
   position: relative;
 }
@@ -1968,10 +1972,9 @@ section {
 /* Contact Us Section
 --------------------------------*/
 #factory-cta #call-to-action {
-  background: linear-gradient(rgba(0, 142, 99, 0.1), rgba(0, 0, 0, 0.1)), url(/assets/img/factory-cta/factory-railway.jpg) fixed center center;
+  background: linear-gradient(rgb(255, 255, 255, 0.1), rgba(0, 0, 0, 0.7)), url(/assets/img/factory-cta/factory-railway.jpg) fixed center center;
   background-size: cover;
   padding: 60px 0;
-  opacity: 85%;
 }
 
 /*--------------------------------------------------------------
