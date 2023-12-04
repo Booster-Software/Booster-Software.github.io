@@ -110,7 +110,7 @@
       '<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>'
     );
     $("body").append('<div class="mobile-nav-overly"></div>');
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)").removeAttr("href");
+    $(".mobile-nav > ul:nth-child(1) > li:nth-child(3) > #navMenuServices").removeAttr("href");
   }
 
 
@@ -418,15 +418,21 @@ function setLanguage(newLang) {
 }
 
 function setActiveFlag(lang) {
-  document
-    .getElementById("languageFlag" + (lang || "en").toUpperCase())
-    .classList.add("active-language-flag");
+  var languageFlagId = "#languageFlag" + (lang || "en").toUpperCase();
+  $(languageFlagId).addClass("active-language-flag");  
+  // Mobile menu
+  $(".mobile-nav > ul:nth-child(1) > li:nth-child(7) > " + languageFlagId).addClass("active-language-flag");
+  // Mobile menu (careers)
+  $(".mobile-nav > ul:nth-child(1) > li:nth-child(8) > " + languageFlagId).addClass("active-language-flag");
 }
 
 function setInactiveFlag(lang) {
-  document
-    .getElementById("languageFlag" + (lang || "en").toUpperCase())
-    .classList.remove("active-language-flag");
+  var languageFlagId = "#languageFlag" + (lang || "en").toUpperCase();
+  $(languageFlagId).removeClass("active-language-flag");
+  // Mobile menu
+  $(".mobile-nav > ul:nth-child(1) > li:nth-child(7) > " + languageFlagId).removeClass("active-language-flag");
+  // Mobile menu (careers)
+  $(".mobile-nav > ul:nth-child(1) > li:nth-child(8) > " + languageFlagId).removeClass("active-language-flag");
 }
 
 function translate() {
