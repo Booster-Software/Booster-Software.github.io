@@ -101,7 +101,7 @@
   });
 
   // Mobile Navigation
-  function renderMobileNav(){
+  function renderMobileNav() {
     var $mobile_nav = $(".nav-menu").clone().prop({
       class: "mobile-nav d-lg-none align-items-center text-center",
     });
@@ -110,15 +110,18 @@
       '<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>'
     );
     $("body").append('<div class="mobile-nav-overly"></div>');
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(3) > #navMenuServices").removeAttr("href");
+    $(
+      ".mobile-nav > ul:nth-child(1) > li:nth-child(3) > #navMenuServices"
+    ).removeAttr("href");
   }
-
 
   if ($(".nav-menu").length) {
     $(".mobile-nav > #navMenuServices").removeAttr("href");
     new Promise(() => {
       applyTranslation();
-    }).then(renderMobileNav()).then(translate()); 
+    })
+      .then(renderMobileNav())
+      .then(translate());
     $(document).on("click", ".mobile-nav-toggle", function (e) {
       $("body").toggleClass("mobile-nav-active");
       $(".mobile-nav-toggle i").toggleClass(
@@ -419,20 +422,28 @@ function setLanguage(newLang) {
 
 function setActiveFlag(lang) {
   var languageFlagId = "#languageFlag" + (lang || "en").toUpperCase();
-  $(languageFlagId).addClass("active-language-flag");  
+  $(languageFlagId).addClass("active-language-flag");
   // Mobile menu
-  $(".mobile-nav > ul:nth-child(1) > li:nth-child(7) > " + languageFlagId).addClass("active-language-flag");
+  $(
+    ".mobile-nav > ul:nth-child(1) > li:nth-child(7) > " + languageFlagId
+  ).addClass("active-language-flag");
   // Mobile menu (careers)
-  $(".mobile-nav > ul:nth-child(1) > li:nth-child(8) > " + languageFlagId).addClass("active-language-flag");
+  $(
+    ".mobile-nav > ul:nth-child(1) > li:nth-child(8) > " + languageFlagId
+  ).addClass("active-language-flag");
 }
 
 function setInactiveFlag(lang) {
   var languageFlagId = "#languageFlag" + (lang || "en").toUpperCase();
   $(languageFlagId).removeClass("active-language-flag");
   // Mobile menu
-  $(".mobile-nav > ul:nth-child(1) > li:nth-child(7) > " + languageFlagId).removeClass("active-language-flag");
+  $(
+    ".mobile-nav > ul:nth-child(1) > li:nth-child(7) > " + languageFlagId
+  ).removeClass("active-language-flag");
   // Mobile menu (careers)
-  $(".mobile-nav > ul:nth-child(1) > li:nth-child(8) > " + languageFlagId).removeClass("active-language-flag");
+  $(
+    ".mobile-nav > ul:nth-child(1) > li:nth-child(8) > " + languageFlagId
+  ).removeClass("active-language-flag");
 }
 
 function translate() {
@@ -517,19 +528,45 @@ function translate() {
     $("#footerEmail").html(language.footerEmail);
     $("#copyright").html(language.copyright);
     // Mobile menu (main)
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(1) > #navMenuHome").html(language.home);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(2) > #navMenuAboutUs").html(language.aboutUs);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(3) > #navMenuServices").html(language.services);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(3) > ul:nth-child(2) > li:nth-child(1) > #navMenuServices1").text(language.servicesTitle1);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(3) > ul:nth-child(2) > li:nth-child(2) > #navMenuServices2").html(language.servicesTitle2);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(3) > ul:nth-child(2) > li:nth-child(3) > #navMenuServices3").html(language.servicesTitle3);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(3) > ul:nth-child(2) > li:nth-child(4) > #navMenuServices4").html(language.servicesTitle4);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(3) > ul:nth-child(2) > li:nth-child(5) > #navMenuServices5").html(language.servicesTitle5);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(3) > ul:nth-child(2) > li:nth-child(6) > #navMenuServices6").html(language.navMenuFactoryCustomSoftware);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(3) > ul:nth-child(2) > li:nth-child(7) > #navMenuServices7").html(language.navMenuFactoryEcommerce);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(4) > #navMenuFactory").html(language.navMenuFactory);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(5) > #navMenuCareers").html(language.careers);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(6) > #navMenuContactUs").html(language.contactUs);
+    $(".mobile-nav > ul:nth-child(1) > li:nth-child(1) > #navMenuHome").html(
+      language.home
+    );
+    $(".mobile-nav > ul:nth-child(1) > li:nth-child(2) > #navMenuAboutUs").html(
+      language.aboutUs
+    );
+    $(
+      ".mobile-nav > ul:nth-child(1) > li:nth-child(3) > #navMenuServices"
+    ).html(language.services);
+    $(
+      ".mobile-nav > ul:nth-child(1) > li:nth-child(3) > ul:nth-child(2) > li:nth-child(1) > #navMenuServices1"
+    ).text(language.servicesTitle1);
+    $(
+      ".mobile-nav > ul:nth-child(1) > li:nth-child(3) > ul:nth-child(2) > li:nth-child(2) > #navMenuServices2"
+    ).html(language.servicesTitle2);
+    $(
+      ".mobile-nav > ul:nth-child(1) > li:nth-child(3) > ul:nth-child(2) > li:nth-child(3) > #navMenuServices3"
+    ).html(language.servicesTitle3);
+    $(
+      ".mobile-nav > ul:nth-child(1) > li:nth-child(3) > ul:nth-child(2) > li:nth-child(4) > #navMenuServices4"
+    ).html(language.servicesTitle4);
+    $(
+      ".mobile-nav > ul:nth-child(1) > li:nth-child(3) > ul:nth-child(2) > li:nth-child(5) > #navMenuServices5"
+    ).html(language.servicesTitle5);
+    $(
+      ".mobile-nav > ul:nth-child(1) > li:nth-child(3) > ul:nth-child(2) > li:nth-child(6) > #navMenuServices6"
+    ).html(language.navMenuFactoryCustomSoftware);
+    $(
+      ".mobile-nav > ul:nth-child(1) > li:nth-child(3) > ul:nth-child(2) > li:nth-child(7) > #navMenuServices7"
+    ).html(language.navMenuFactoryEcommerce);
+    $(".mobile-nav > ul:nth-child(1) > li:nth-child(4) > #navMenuFactory").html(
+      language.navMenuFactory
+    );
+    $(".mobile-nav > ul:nth-child(1) > li:nth-child(5) > #navMenuCareers").html(
+      language.careers
+    );
+    $(
+      ".mobile-nav > ul:nth-child(1) > li:nth-child(6) > #navMenuContactUs"
+    ).html(language.contactUs);
     // Careers
     $("#careersTitle").html(language.careers);
     $("#careersDescription").html(language.careersDescription);
@@ -538,15 +575,29 @@ function translate() {
     $("#careersCVfileLabel").html(language.careersCVfileLabel);
     $("#careersSubmitLabel").html(language.careersSubmitLabel);
     // Mobile menu (careers)
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(2) > #navMenuHome").html(language.home);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(3) > #navMenuAboutUs").html(language.aboutUs);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(4) > #navMenuServices").html(language.services);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(5) > #navMenuFactory").html(language.navMenuFactory);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(6) > #navMenuCareers").html(language.careers);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(7) > #navMenuContactUs").html(language.contactUs);
+    $(".mobile-nav > ul:nth-child(1) > li:nth-child(2) > #navMenuHome").html(
+      language.home
+    );
+    $(".mobile-nav > ul:nth-child(1) > li:nth-child(3) > #navMenuAboutUs").html(
+      language.aboutUs
+    );
+    $(
+      ".mobile-nav > ul:nth-child(1) > li:nth-child(4) > #navMenuServices"
+    ).html(language.services);
+    $(".mobile-nav > ul:nth-child(1) > li:nth-child(5) > #navMenuFactory").html(
+      language.navMenuFactory
+    );
+    $(".mobile-nav > ul:nth-child(1) > li:nth-child(6) > #navMenuCareers").html(
+      language.careers
+    );
+    $(
+      ".mobile-nav > ul:nth-child(1) > li:nth-child(7) > #navMenuContactUs"
+    ).html(language.contactUs);
     // Booster Factory
     $("#navMenuFactory").html(language.navMenuFactory);
-    $("#navMenuFactoryCustomSoftware").html(language.navMenuFactoryCustomSoftware);
+    $("#navMenuFactoryCustomSoftware").html(
+      language.navMenuFactoryCustomSoftware
+    );
     $("#navMenuFactoryEcommerce").html(language.navMenuFactoryEcommerce);
     $("#factoryMainTitleText1").html(language.factoryMainTitleText1);
     $("#factoryMainTitleText2").html(language.factoryMainTitleText2);
@@ -560,19 +611,45 @@ function translate() {
     $("#factoryFeatures3Feature2").html(language.factoryFeatures3Feature2);
     $("#factoryFeatures3Feature3").html(language.factoryFeatures3Feature3);
     $("#factoryCustomSoftwareTitle").html(language.factoryCustomSoftwareTitle);
-    $("#factoryCustomSoftwareDescription").html(language.factoryCustomSoftwareDescription);
-    $("#factoryCustomSoftwareTitle1").html(language.factoryCustomSoftwareTitle1);
-    $("#factoryCustomSoftwareDescription1").html(language.factoryCustomSoftwareDescription1);
-    $("#factoryCustomSoftwareTitle2").html(language.factoryCustomSoftwareTitle2);
-    $("#factoryCustomSoftwareDescription2").html(language.factoryCustomSoftwareDescription2);
-    $("#factoryCustomSoftwareTitle3").html(language.factoryCustomSoftwareTitle3);
-    $("#factoryCustomSoftwareDescription3").html(language.factoryCustomSoftwareDescription3);
-    $("#factoryCustomSoftwareTitle4").html(language.factoryCustomSoftwareTitle4);
-    $("#factoryCustomSoftwareDescription4").html(language.factoryCustomSoftwareDescription4);
-    $("#factoryCustomSoftwareTitle5").html(language.factoryCustomSoftwareTitle5);
-    $("#factoryCustomSoftwareDescription5").html(language.factoryCustomSoftwareDescription5);
-    $("#factoryCustomSoftwareTitle6").html(language.factoryCustomSoftwareTitle6);
-    $("#factoryCustomSoftwareDescription6").html(language.factoryCustomSoftwareDescription6);
+    $("#factoryCustomSoftwareDescription").html(
+      language.factoryCustomSoftwareDescription
+    );
+    $("#factoryCustomSoftwareTitle1").html(
+      language.factoryCustomSoftwareTitle1
+    );
+    $("#factoryCustomSoftwareDescription1").html(
+      language.factoryCustomSoftwareDescription1
+    );
+    $("#factoryCustomSoftwareTitle2").html(
+      language.factoryCustomSoftwareTitle2
+    );
+    $("#factoryCustomSoftwareDescription2").html(
+      language.factoryCustomSoftwareDescription2
+    );
+    $("#factoryCustomSoftwareTitle3").html(
+      language.factoryCustomSoftwareTitle3
+    );
+    $("#factoryCustomSoftwareDescription3").html(
+      language.factoryCustomSoftwareDescription3
+    );
+    $("#factoryCustomSoftwareTitle4").html(
+      language.factoryCustomSoftwareTitle4
+    );
+    $("#factoryCustomSoftwareDescription4").html(
+      language.factoryCustomSoftwareDescription4
+    );
+    $("#factoryCustomSoftwareTitle5").html(
+      language.factoryCustomSoftwareTitle5
+    );
+    $("#factoryCustomSoftwareDescription5").html(
+      language.factoryCustomSoftwareDescription5
+    );
+    $("#factoryCustomSoftwareTitle6").html(
+      language.factoryCustomSoftwareTitle6
+    );
+    $("#factoryCustomSoftwareDescription6").html(
+      language.factoryCustomSoftwareDescription6
+    );
     $("#eCommerceDescription").html(language.eCommerceDescription);
     $("#ecommerceMediaTile1").html(language.ecommerceMediaTile1);
     $("#ecommerceMediaDescription1").html(language.ecommerceMediaDescription1);
@@ -592,15 +669,21 @@ function translate() {
     $("#digitalPartnerDescription").html(language.digitalPartnerDescription);
     $("#digitalPartnerCTA").html(language.digitalPartnerCTA);
     // Mobile menu (Booster Factory)
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(3) > #navMenuFactory").html(language.navMenuFactory);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(4) > #navMenuFactoryCustomSoftware").html(language.navMenuFactoryCustomSoftware);
-    $(".mobile-nav > ul:nth-child(1) > li:nth-child(5) > #navMenuFactoryEcommerce").html(language.navMenuFactoryEcommerce);
+    $(".mobile-nav > ul:nth-child(1) > li:nth-child(3) > #navMenuFactory").html(
+      language.navMenuFactory
+    );
+    $(
+      ".mobile-nav > ul:nth-child(1) > li:nth-child(4) > #navMenuFactoryCustomSoftware"
+    ).html(language.navMenuFactoryCustomSoftware);
+    $(
+      ".mobile-nav > ul:nth-child(1) > li:nth-child(5) > #navMenuFactoryEcommerce"
+    ).html(language.navMenuFactoryEcommerce);
   });
 }
 
-function applyTranslation(){
+function applyTranslation() {
   translate();
-  setActiveFlag(localStorage.getItem("language")); 
+  setActiveFlag(localStorage.getItem("language"));
 }
 
 $(document).ready(function () {
