@@ -309,7 +309,8 @@ h1, h2, h3, h4, h5, h6 {
   left: 15px;
   z-index: 9999;
   overflow-y: auto;
-  background: #fff;
+  color: #fff;
+  background: #111;
   transition: ease-in-out 0.2s;
   opacity: 0;
   visibility: hidden;
@@ -326,10 +327,11 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav a {
   display: block;
   position: relative;
-  color: #333333;
+  color: #fff;
   padding: 10px 20px;
   font-weight: 500;
   outline: none;
+  text-transform: uppercase;
 }
 
 .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
@@ -386,6 +388,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-nav-active .mobile-nav-toggle i {
   color: #fff;
+}
+
+.mobile-nav .language-flag {
+  margin-top: 15px 5px 1px 5px;
 }
 
 /*--------------------------------------------------------------
