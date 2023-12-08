@@ -53,6 +53,11 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
+/* Drop-down Menu */
+.dd-menu{
+  border-radius: 3%;
+}
+
 @media (max-width: 768px) {
   .back-to-top {
     bottom: 15px;
@@ -833,6 +838,20 @@ section {
   text-align: left;
 }
 
+#careers .btn-outline-primary {
+  font-family: "Montserrat", sans-serif;
+  border-radius: 10px;
+  color: #18d26e;
+  border-color: #18d26e;
+  margin-right: 5px;
+}
+
+#careers .btn-outline-primary:hover {
+  background-color: #18d26e;
+  border-color: #18d26e;
+  color: white;
+}
+
 #careers .btn-primary {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
@@ -845,6 +864,10 @@ section {
   margin: 10px;
   color: #fff;
   background: #18d26e;
+}
+
+#careers .form-control-file {
+  display: none;
 }
 
 .grecaptcha-badge {
@@ -1697,7 +1720,7 @@ section {
 
 #footer .copyright {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 55px;
 }
 
 #footer .credits {
