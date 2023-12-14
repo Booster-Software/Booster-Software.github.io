@@ -1341,6 +1341,16 @@ section {
   background-color: #18d26e;
 }
 
+/* Reviews Section
+--------------------------------*/
+#reviews .star-gold {
+  color: goldenrod;
+}
+
+#reviews h6 {
+  color: #18d26e;
+}
+
 /* Team Section
 --------------------------------*/
 #team {
