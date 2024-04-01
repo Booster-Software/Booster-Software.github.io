@@ -1350,9 +1350,22 @@ section {
   padding: 60px 0;
 }
 
+#team .members-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#team .member-container {
+  width: 240px;
+}
+
 #team .member {
   text-align: center;
-  margin-bottom: 20px;
   background: #000;
   position: relative;
 }
@@ -1394,7 +1407,6 @@ section {
 }
 
 #team .member span {
-  font-style: italic;
   display: block;
   font-size: 13px;
   color: #fff;
