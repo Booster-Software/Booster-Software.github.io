@@ -1234,6 +1234,27 @@ section {
   padding: 60px 0;
 }
 
+#clients .clients-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#clients .client-container {
+  width: 300px;
+}
+
+#clients .client {
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  max-width: 220px;
+}
+
 #clients img {
   max-width: 100%;
   transition: 0.3s;
