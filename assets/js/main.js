@@ -513,6 +513,8 @@ function translate() {
     $("#servicesDescription4").html(language.servicesDescription4);
     $("#servicesTitle5").html(language.servicesTitle5);
     $("#servicesDescription5").html(language.servicesDescription5);
+    $("#servicesTitle6").html(language.servicesTitle6);
+    $("#servicesDescription6").html(language.servicesDescription6);
     $("#letsWorkTogetherTitle").html(language.letsWorkTogetherTitle);
     $("#letsWorkTogetherDescription").html(
       language.letsWorkTogetherDescription
