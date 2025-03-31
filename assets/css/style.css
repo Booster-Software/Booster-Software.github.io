@@ -1460,6 +1460,7 @@ section {
 #contact .contact-info {
   margin-bottom: 20px;
   text-align: center;
+  justify-content: center;
 }
 
 #contact .contact-info i {
