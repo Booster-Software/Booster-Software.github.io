@@ -410,7 +410,7 @@ function getTranslation(cb) {
   var lang = localStorage.getItem("language") || "en";
 
   $.ajax({
-    url: "/assets/languages/" + lang + ".json?v=19",
+    url: "/assets/languages/" + lang + ".json?v=20",
     dataType: "json",
     success: function (lang) {
       cb(lang);
