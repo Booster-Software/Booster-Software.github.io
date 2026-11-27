@@ -453,7 +453,7 @@ function getTranslation(cb) {
   var lang = getLanguage();
 
   $.ajax({
-    url: "/assets/languages/" + lang + ".json?v=21",
+    url: "/assets/languages/" + lang + ".json?v=22",
     dataType: "json",
     success: function (lang) {
       cb(lang);
