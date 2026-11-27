@@ -1,3 +1,8 @@
+// Language settings: declared first because the block below translates the
+// page while this file is still loading
+var SUPPORTED_LANGUAGES = ["es", "en"];
+var DEFAULT_LANGUAGE = "es";
+
 (function ($) {
   "use strict";
 
@@ -406,8 +411,46 @@ $(document).ready(function () {
 });
 
 // Languages
+function isSupportedLanguage(lang) {
+  return SUPPORTED_LANGUAGES.indexOf(lang) !== -1;
+}
+
+// Language chosen by the user (flag click), if any
+function getSavedLanguage() {
+  try {
+    var saved = localStorage.getItem("language");
+    return isSupportedLanguage(saved) ? saved : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+// First supported language in the browser's preference list, if any
+function getBrowserLanguage() {
+  var browserLanguages =
+    navigator.languages && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || navigator.userLanguage];
+
+  for (var i = 0; i < browserLanguages.length; i++) {
+    var lang = String(browserLanguages[i] || "")
+      .toLowerCase()
+      .split("-")[0];
+    if (isSupportedLanguage(lang)) {
+      return lang;
+    }
+  }
+
+  return null;
+}
+
+// Saved choice first, then the browser language, then Spanish
+function getLanguage() {
+  return getSavedLanguage() || getBrowserLanguage() || DEFAULT_LANGUAGE;
+}
+
 function getTranslation(cb) {
-  var lang = localStorage.getItem("language") || "en";
+  var lang = getLanguage();
 
   $.ajax({
     url: "/assets/languages/" + lang + ".json?v=21",
@@ -419,8 +462,10 @@ function getTranslation(cb) {
 }
 
 function setLanguage(newLang) {
-  var currentLang = localStorage.getItem("language");
-  localStorage.setItem("language", newLang);
+  var currentLang = getLanguage();
+  try {
+    localStorage.setItem("language", newLang);
+  } catch (e) {}
 
   setInactiveFlag(currentLang);
   setActiveFlag(newLang);
@@ -429,7 +474,7 @@ function setLanguage(newLang) {
 }
 
 function setActiveFlag(lang) {
-  var languageFlagId = "#languageFlag" + (lang || "en").toUpperCase();
+  var languageFlagId = "#languageFlag" + (lang || DEFAULT_LANGUAGE).toUpperCase();
   $(languageFlagId).addClass("active-language-flag");
   // Mobile menu
   $(
@@ -442,7 +487,7 @@ function setActiveFlag(lang) {
 }
 
 function setInactiveFlag(lang) {
-  var languageFlagId = "#languageFlag" + (lang || "en").toUpperCase();
+  var languageFlagId = "#languageFlag" + (lang || DEFAULT_LANGUAGE).toUpperCase();
   $(languageFlagId).removeClass("active-language-flag");
   // Mobile menu
   $(
@@ -455,6 +500,8 @@ function setInactiveFlag(lang) {
 }
 
 function translate() {
+  document.documentElement.lang = getLanguage();
+
   getTranslation(function (language) {
     // Main page
     $("#navMenuHome").html(language.home);
@@ -584,6 +631,7 @@ function translate() {
     $("#careersCVemailLabel").html(language.careersCVemailLabel);
     $("#careersCVfileDescription").html(language.careersCVfileDescription);
     $("#careersCVfileLabel").html(language.careersCVfileLabel);
+    $("#careersCVfileButton").val(language.careersCVfileButton);
     $("#careersSubmitLabel").html(language.careersSubmitLabel);
     // Mobile menu (careers)
     $(".mobile-nav > ul:nth-child(1) > li:nth-child(2) > #navMenuHome").html(
@@ -694,7 +742,7 @@ function translate() {
 
 function applyTranslation() {
   translate();
-  setActiveFlag(localStorage.getItem("language"));
+  setActiveFlag(getLanguage());
 }
 
 $(document).ready(function () {
